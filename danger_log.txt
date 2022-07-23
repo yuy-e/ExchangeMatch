@@ -1,0 +1,19 @@
+--------------------------
+Exception Handle:
+--------------------------
+1. SQLException: 
+    If the user try to create invalid request such as amount<0 when create symbol or limit<0 when create order, batabase will throw SQLException and we catch those exceptions to send an error line back as response
+2. ParserException:
+    If user send the file no in XML format, we could not parse the xml and print the error message
+3. Others:
+    For other exception like socket exception and XMl transforma exception, we print the error message
+
+-----------------------------------------------------------------------
+Robust to security:
+We are not allow user to query to cancel the order not within the account
+
+Testing:
+1. create request testing for both valid and not valid condition 
+2. transaction request testing for valid order/quey/cancel, buy/sell price Matching
+3. concurrency testing, we create 1000 threads to send the buy/sell request under the same account to confirm that those requests are not under data race and as a result show the same result as expection.
+

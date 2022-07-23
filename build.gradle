@@ -1,0 +1,60 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-clover-plugin:3.0.3'
+    }
+
+    
+}
+
+allprojects{
+    repositories {
+        mavenCentral()
+    }
+    apply plugin: 'base'
+    apply plugin: 'com.bmuschko.clover'
+    dependencies {
+        clover 'org.openclover:clover:4.4.1'
+    }
+}
+clover{
+    compiler {
+        additionalArgs = "-g:lines,source,vars"
+    }
+    report {
+        xml=true
+        html = true
+    }
+}
+task resolveDependencies {
+   doLast {
+       project.rootProject.allprojects.each { subProject ->
+           subProject.buildscript.configurations.each { configuration->
+              if(configuration.canBeResolved) {
+                 configuration.resolve()
+              }
+           }
+           subProject.configurations.each { configuration ->
+              if(configuration.canBeResolved) {
+                 configuration.resolve()
+              }
+           }
+       }
+   }
+}
+
+tasks.register("run-server") {
+    dependsOn project('server').getTasksByName('run', false)
+    group = "Run Client/Server"
+    description = "Run the Server"
+}
+
+tasks.register("run-client") {
+    dependsOn project('client').getTasksByName('run', false)
+    group = "Run Client/Server"
+    description = "Run the Client"
+}
+    

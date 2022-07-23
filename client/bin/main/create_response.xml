@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results>
+ <created id="ACCOUNT_ID"/> #For account create
+ <created sym="SYM" id="ACCOUNT_ID"/> #For symbol create
+ <error id="ACCOUNT_ID">Msg</error> #For account create error
+ <error sym="SYM" id="ACCOUNT_ID">Msg</error> #For symbol create error
+</results>

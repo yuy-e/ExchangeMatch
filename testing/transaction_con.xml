@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transactions id="1"> 
+ <order sym="A" amount="-1" limit="1.34"/><!--sell 1 per time, run for 1000 time, as a result the symbol A amount would be 0-->
+</transactions>

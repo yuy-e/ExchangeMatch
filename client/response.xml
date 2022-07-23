@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<result>
+    <created id="123456"/>
+    <created SYM="SPY" id="123456"/>
+    <created SYM="GVM" id="123456"/>
+    <error SYM="GVM" id="12300">Error: Account does not exist</error>
+</result>

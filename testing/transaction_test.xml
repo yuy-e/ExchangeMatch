@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transactions id="1"> 
+ <order sym="A" amount="50.00" limit="1.34"/><!--id=0001-->
+  <order sym="A" amount="80.00" limit="1.36"/><!--id=0002-->
+ <order sym="B" amount="-100.00" limit="2.88"/><!--id=0003-->
+ <order sym="B" amount="-150.00" limit="2.90"/><!--id=0004-->
+ <order sym="C" amount="200.00" limit="1.66"/><!--id=0005-->
+ <order sym="C" amount="200.00" limit="0.01"/><!--id=0006-->
+ <query id="0001"/>
+ <query id="0002"/>
+ <query id="0003"/>
+ <query id="0007"/> <!--The queried Order does not exist.-->
+ <cancel id="0006"/>
+ <cancel id="0007"/> <!--The canceled Order does not exist.-->
+  <query id="0006"/>
+</transactions>
