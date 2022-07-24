@@ -1,4 +1,4 @@
-**Developer:** Zijing Zhang, Yue Yu
+**Developer:** Zijing Wang, Yue Yu
 
 **Language:** Java
 
