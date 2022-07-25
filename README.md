@@ -2,11 +2,13 @@
 
 **Language:** Java
 
+---
 **Description:**
 
 An exchange matching engine that supports matching buy and sell orders for a stock/commodities market. The engine provides functions including accounts creation, positions creation, creating, querying, and canceling orders. 
 
-#Run Command:
+---
+**Run Command:**
 
 ```
 ./gradlew installDist
